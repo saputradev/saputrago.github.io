@@ -1,0 +1,10 @@
+<main class="hero">
+    <div class="hero__caption" {{ if $.Site.Params.hero.textColor }} style="color: {{ $.Site.Params.hero.textColor }};"
+        {{ end }}>
+        {{ .Content }}
+        {{ if $.Site.Params.cta.show }}
+        {{ partial "cta-btn.html" . }}
+        {{ end }}
+    </div>
+    <img class="img-banner" src="images/{{ print (index $.Params.images 0) }}"/>
+</main>

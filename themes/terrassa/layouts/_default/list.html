@@ -1,0 +1,14 @@
+{{ define "main" }}
+<div class="header-blog">
+	<h2>Post</h2>
+</div>
+<main class="content">
+	{{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "posts") }}
+
+	{{ range $paginator.Pages }}
+	{{ .Render "card" }}
+	{{ end }}
+
+	{{ template "_internal/pagination.html" . }}
+</main>
+{{ end }}
