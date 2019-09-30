@@ -334,7 +334,21 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore laborum impedit 
 	crossorigin="anonymous"
 ></script>
 
-
+<script>
+    (async () => {
+        if ('loading' in HTMLImageElement.prototype) {
+            const images = document.querySelectorAll("img.lazyload");
+            images.forEach(img => {
+                img.src = img.dataset.src;
+            });
+        } else {
+            
+            const lazySizesLib = await import('/js/lazysizes.min.js');
+            
+            lazySizes.init(); 
+        }
+    })();
+</script>
 </footer>
 </body>
 
