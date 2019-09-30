@@ -342,10 +342,14 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore laborum impedit 
                 img.src = img.dataset.src;
             });
         } else {
-            
-            const lazySizesLib = await import('/js/lazysizes.min.js');
-            
-            lazySizes.init(); 
+            script.async = true;
+            script.src =
+                "/js/lazysizes.min.js";
+            window.lazyLoadOptions = {
+                elements_selector: "[loading=lazy]"
+                
+            };
+            document.body.appendChild(script);
         }
     })();
 </script>
