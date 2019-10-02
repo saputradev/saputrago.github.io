@@ -226,6 +226,7 @@ if (!doNotTrack) {
   <img
     class="lazyload"
     data-sizes="auto"
+    src=", /posts/game-websites/images/dummy-image_hu1b3458779648c140972ef151e3ca42eb_4370078_1200x0_resize_q75_box.jpg 1200w"
     data-srcset='
     
       /posts/game-websites/images/dummy-image_hu1b3458779648c140972ef151e3ca42eb_4370078_500x0_resize_q75_box.jpg 500w
@@ -246,6 +247,7 @@ if (!doNotTrack) {
     >
   <noscript>
     <img
+      src=", /posts/game-websites/images/dummy-image_hu1b3458779648c140972ef151e3ca42eb_4370078_1200x0_resize_q75_box.jpg 1200w"
       loading="lazy"
       
       srcset='
@@ -301,9 +303,22 @@ if (!doNotTrack) {
 
 
     </footer>
+    <script>
+        function loadAPI() {
+            var js = document.createElement('script');
+            js.src = 'https:\/\/c1.ty-cdn.net\/-\/talkyard-comments.min.js';
+            document.body.appendChild(js);
+        }
+        window.onscroll = function () {
+            var rect = document.getElementById('comments').getBoundingClientRect();
+            if (rect.top < window.innerHeight) {
+                loadAPI();
+                window.onscroll = null;
+            } 
+        }
+    </script>
     <script>talkyardServerUrl='https:\/\/comments-for-saputrago-github-io.talkyard.net';</script>
-    <script async defer src="https://c1.ty-cdn.net/-/talkyard-comments.min.js"></script>
-    <div class="talkyard-comments" data-discussion-id="" style="margin-top: 45px;">
+    <div class="talkyard-comments" data-discussion-id="" style="margin-top: 45px;" id="comments">
     <noscript>Please enable Javascript to view comments.</noscript>
     </div>
     

@@ -207,7 +207,7 @@ if (!doNotTrack) {
         <div><a class="btn-work" href="#" target="_blank">View Project</a></div>
         </div>
     </div>
-    <div class="work-image"><img src="https://paperpillar.com/assets/images/lifecycle-works.png" loading="lazy" class="lazyload"></div>
+    <div class="work-image"><img src="https://paperpillar.com/assets/images/lifecycle-works.png" loading="lazy"></div>
 </div>
 <div class="work-wrapper">
     <div class="work-description">
@@ -219,7 +219,7 @@ if (!doNotTrack) {
         <div><a class="btn-work" href="#" target="_blank">View Project</a></div>
         </div>
     </div>
-    <div class="work-image"><img src="https://paperpillar.com/assets/images/lifecycle-works.png" loading="lazy" class="lazyload"></div>
+    <div class="work-image"><img src="https://paperpillar.com/assets/images/lifecycle-works.png" loading="lazy"></div>
 </div>
 <div class="work-wrapper">
     <div class="work-description">
@@ -231,7 +231,7 @@ if (!doNotTrack) {
         <div><a class="btn-work" href="#" target="_blank">View Project</a></div>
         </div>
     </div>
-    <div class="work-image"><img src="https://paperpillar.com/assets/images/lifecycle-works.png" loading="lazy" class="lazyload"></div>
+    <div class="work-image"><img src="https://paperpillar.com/assets/images/lifecycle-works.png" loading="lazy"></div>
 </div>
 
     </main>
@@ -242,9 +242,22 @@ if (!doNotTrack) {
         
 
     </footer>
+    <script>
+        function loadAPI() {
+            var js = document.createElement('script');
+            js.src = 'https:\/\/c1.ty-cdn.net\/-\/talkyard-comments.min.js';
+            document.body.appendChild(js);
+        }
+        window.onscroll = function () {
+            var rect = document.getElementById('comments').getBoundingClientRect();
+            if (rect.top < window.innerHeight) {
+                loadAPI();
+                window.onscroll = null;
+            } 
+        }
+    </script>
     <script>talkyardServerUrl='https:\/\/comments-for-saputrago-github-io.talkyard.net';</script>
-    <script async defer src="https://c1.ty-cdn.net/-/talkyard-comments.min.js"></script>
-    <div class="talkyard-comments" data-discussion-id="" style="margin-top: 45px;">
+    <div class="talkyard-comments" data-discussion-id="" style="margin-top: 45px;" id="comments">
     <noscript>Please enable Javascript to view comments.</noscript>
     </div>
     

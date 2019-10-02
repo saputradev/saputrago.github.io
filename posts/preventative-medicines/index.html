@@ -229,9 +229,22 @@ if (!doNotTrack) {
 
 
     </footer>
+    <script>
+        function loadAPI() {
+            var js = document.createElement('script');
+            js.src = 'https:\/\/c1.ty-cdn.net\/-\/talkyard-comments.min.js';
+            document.body.appendChild(js);
+        }
+        window.onscroll = function () {
+            var rect = document.getElementById('comments').getBoundingClientRect();
+            if (rect.top < window.innerHeight) {
+                loadAPI();
+                window.onscroll = null;
+            } 
+        }
+    </script>
     <script>talkyardServerUrl='https:\/\/comments-for-saputrago-github-io.talkyard.net';</script>
-    <script async defer src="https://c1.ty-cdn.net/-/talkyard-comments.min.js"></script>
-    <div class="talkyard-comments" data-discussion-id="" style="margin-top: 45px;">
+    <div class="talkyard-comments" data-discussion-id="" style="margin-top: 45px;" id="comments">
     <noscript>Please enable Javascript to view comments.</noscript>
     </div>
     
